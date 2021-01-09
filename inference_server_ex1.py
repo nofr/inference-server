@@ -31,7 +31,7 @@ def take_test_data(json_file, y_test=False):
 def prediction(the_model, x_test_data):
     """
     return the prediction of the X test data
-    :param model:
+    :param the_model:
     :param x_test_data:
     :return: y_pred
     """
@@ -45,12 +45,11 @@ def check_scores(y_test_data, y_pred_data):
     :param y_pred_data:
     :return: classification report
     """
-
     return classification_report(y_test_data, y_pred_data)
 
 
 def url_create_dataframe(fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides,
-                     free_sulfur_dioxide, total_sulfur_dioxide, density, ph, sulphates, alcohol):
+                         free_sulfur_dioxide, total_sulfur_dioxide, density, ph, sulphates, alcohol):
     """
     create X_train dataframe
     :rtype: all feature are numeric
@@ -100,7 +99,7 @@ def predict_multi():
 if __name__ == "__main__":
     port = os.environ.get('PORT')
 
-    if port:   # for heroku
+    if port:  # for heroku
         app.run(host='0.0.0.0', port=int(port))
     else:  # for local repo
         app.run(host='localhost',
