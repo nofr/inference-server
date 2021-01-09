@@ -100,10 +100,11 @@ if __name__ == "__main__":
     port = os.environ.get('PORT')
 
     if port:  # for heroku
-        app.run(host='0.0.0.0', port=int(port))
+        app.run(port=int(port), threaded=True) # host='0.0.0.0',
     else:  # for local repo
         app.run(host='localhost',
-                port=8000)  # 5000 was taken so I used 8000 - but it should work on your computer with 5000
+                port=8000,  # 5000 was taken so I used 8000 - but it should work on your computer with 5000
+                threaded=True)
 
 # http://localhost:8000/predict_multi?fixed_acidity=12.3&volatile_acidity=9.8&citric_acid=0.49&residual_sugar=3.1&chlorides=0.08&free_sulfur_dioxide=28&total_sulfur_dioxide=46&density=0.9993&ph=3.2&sulphates=0.8&alcohol=10.2
 # http://localhost:8000/predict_single?fixed_acidity=12.3&volatile_acidity=9.8&citric_acid=0.49&residual_sugar=3.1&chlorides=0.08&free_sulfur_dioxide=28&total_sulfur_dioxide=46&density=0.9993&ph=3.2&sulphates=0.8&alcohol=10.2
