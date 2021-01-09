@@ -1,6 +1,6 @@
 
 # the model:
-PICKLE_FILENAME = '/Users/nofar/Downloads/Serving your model/Heroku/inference_server/my_pickled_model.pickle'
+PICKLE_FILENAME = 'my_pickled_model.pickle'
 
 # the test data file:
 JSON_FILENAME = '/Users/nofar/downloads/Serving your model/Flask/my_jsoned_test.json'

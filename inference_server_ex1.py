@@ -4,7 +4,6 @@ import numpy as np
 import os
 from sklearn.metrics import classification_report
 from loaded_model import *
-from config import JSON_FILENAME
 
 # import sklearn
 # print(sklearn.__version__) # 0.23.2
